@@ -98,8 +98,5 @@ RUN git clone https://github.com/HazyResearch/flash-attention \
     && cd csrc/ft_attention && pip install . && cd ../../ \
     && cd .. && rm -rf flash-attention
 
-RUN export PYTHONPATH=$PWD:$PYTHONPATH \
-    && pytest -q -s tests/datamodules/test_language_modeling_hf.py -k "openwebtext"
-
 RUN pip install transformers --upgrade \
     && pip install sentencepiece
