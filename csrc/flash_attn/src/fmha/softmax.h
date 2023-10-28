@@ -41,7 +41,8 @@ inline __device__ float apply_exp_(float x, float max) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 inline __device__ float apply_exp2_(float x, float max) {
-    return exp2f(x - max);
+    // return exp2f(x - max);
+    return exp2f(x)/exp2f(max);
     // With fast-math, this produces the same PTX instruction as the assembly below
     // float diff = x - max;
     // float res;
