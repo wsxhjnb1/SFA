@@ -8,7 +8,7 @@ model:
   config:
     # n_positions is already set to ${datamodule.max_length}
     residual_in_fp32: True
-    use_flash_attn: True
+    use_flash_attn: False
     fused_bias_fc: True
     fused_mlp: True
     fused_dropout_add_ln: True

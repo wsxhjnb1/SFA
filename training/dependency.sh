@@ -30,7 +30,7 @@ git clone https://github.com/HazyResearch/flash-attention
 
 # Checkout the specified version
 cd flash-attention
-git checkout v2.2.1
+git checkout v1.0.9
 
 # Install the extensions
 pip install ./csrc/fused_softmax
@@ -44,10 +44,10 @@ pip install ./csrc/ft_attention
 cd ..
 rm -rf flash-attention
 
-git clone https://github.com/NVIDIA/apex.git
-cd apex
-git checkout 23.05
-pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" --global-option="--fast_multihead_attn" . && cd .. && rm -rf apex
+git clone https://github.com/NVIDIA/apex.git \
+&& cd apex \
+&& git checkout 23.05 \
+&& pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" --global-option="--fast_multihead_attn" . && cd .. && rm -rf apex
 
 pip install transformers --upgrade
 pip install sentencepiece
